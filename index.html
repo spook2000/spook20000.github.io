@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070812" />
+  <meta name="description" content="Spooks persönlicher Link-Hub – Socials, Projekte und mehr." />
+  <title>SPOOK // Link Hub</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-theme="void">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="grid" aria-hidden="true"></div>
+  <div class="aurora aurora-one" aria-hidden="true"></div>
+  <div class="aurora aurora-two" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__mark">S</div>
+    <p>INITIALIZING PROFILE</p>
+    <div class="preloader__line"><span></span></div>
+  </div>
+
+  <main class="page-shell">
+    <nav class="topbar glass" aria-label="Seitennavigation">
+      <a class="brand" href="#top" aria-label="Zurück nach oben">
+        <span class="brand__icon">S</span>
+        <span class="brand__text">SPOOK<span>.LINK</span></span>
+      </a>
+
+      <div class="topbar__actions">
+        <button class="icon-button" id="themeButton" type="button" aria-label="Farbstil wechseln" title="Farbstil wechseln">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+          </svg>
+        </button>
+
+        <button class="icon-button" id="shareButton" type="button" aria-label="Profil teilen" title="Profil teilen">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="18" cy="5" r="2.5"/>
+            <circle cx="6" cy="12" r="2.5"/>
+            <circle cx="18" cy="19" r="2.5"/>
+            <path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <section class="hero" id="top">
+      <div class="hero__beam" aria-hidden="true"></div>
+
+      <div class="profile-card glass reveal">
+        <div class="profile-card__scan" aria-hidden="true"></div>
+
+        <div class="avatar-wrap">
+          <div class="avatar-orbit avatar-orbit--one"></div>
+          <div class="avatar-orbit avatar-orbit--two"></div>
+
+          <div class="avatar">
+            <img src="assets/avatar.svg" alt="Cyberpunk Profilbild von Spook" />
+          </div>
+
+          <span class="online-dot" aria-label="Online"></span>
+        </div>
+
+        <div class="eyebrow">
+          <span class="eyebrow__dot"></span>
+          AVAILABLE FOR PROJECTS
+        </div>
+
+        <h1>
+          <span class="glitch" data-text="SPOOK">SPOOK</span>
+          <span class="title-mark">/</span>
+          <span class="title-muted">DEV</span>
+        </h1>
+
+        <p class="hero-copy">
+          Ich baue moderne Websites, Discord-Bots und digitale Projekte
+          mit einer dunklen, kompromisslosen Ästhetik.
+        </p>
+
+        <button class="handle" id="copyHandle" type="button" data-copy="spook912">
+          <span class="handle__signal"></span>
+          spook912
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="8" y="8" width="11" height="11" rx="2"/>
+            <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
+          </svg>
+        </button>
+
+        <div class="stats">
+          <div class="stat">
+            <strong data-counter="12">0</strong>
+            <span>Projekte</span>
+          </div>
+          <div class="stat">
+            <strong data-counter="4">0</strong>
+            <span>Skills</span>
+          </div>
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Online</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-column">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-kicker">CONNECT</span>
+            <h2>Meine Links</h2>
+          </div>
+          <span class="section-number">01</span>
+        </div>
+
+        <div class="link-stack">
+          <a class="link-card reveal" href="https://www.instagram.com/spook_1732/" target="_blank" rel="noopener noreferrer" data-accent="pink">
+            <div class="link-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1"/>
+              </svg>
+            </div>
+            <div class="link-card__copy">
+              <strong>Instagram</strong>
+              <span>Daily life, edits & behind the scenes</span>
+            </div>
+            <span class="link-card__tag">@spook_1732</span>
+            <span class="link-card__arrow">↗</span>
+          </a>
+
+          <a class="link-card reveal" href="https://www.tiktok.com/@spook2070" target="_blank" rel="noopener noreferrer" data-accent="cyan">
+            <div class="link-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14.5 4v10.2a4.7 4.7 0 1 1-4-4.65"/>
+                <path d="M14.5 4c1.05 2.35 2.65 3.65 5 3.9"/>
+              </svg>
+            </div>
+            <div class="link-card__copy">
+              <strong>TikTok</strong>
+              <span>Clips, coding content & highlights</span>
+            </div>
+            <span class="link-card__tag">@spook2070</span>
+            <span class="link-card__arrow">↗</span>
+          </a>
+
+          <a class="link-card reveal discord-copy-card" href="#" data-copy="spook912" data-accent="violet" aria-label="Discord-Namen spook912 kopieren">
+            <div class="link-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.2 6.3A13 13 0 0 1 12 5.4a13 13 0 0 1 4.8.9c1.3 1.8 2.1 4 2.25 6.3a10.8 10.8 0 0 1-3.1 2.4l-.8-1.1a7.6 7.6 0 0 0 1.25-.7c-2.8 1.3-6 1.3-8.8 0 .4.3.8.5 1.25.7l-.8 1.1a10.8 10.8 0 0 1-3.1-2.4A12 12 0 0 1 7.2 6.3Z"/>
+                <circle cx="9.2" cy="11.1" r="1"/>
+                <circle cx="14.8" cy="11.1" r="1"/>
+              </svg>
+            </div>
+            <div class="link-card__copy">
+              <strong>Discord</strong>
+              <span>Klicken, um meinen Discord-Namen zu kopieren</span>
+            </div>
+            <span class="link-card__tag">spook912</span>
+            <span class="link-card__arrow">↗</span>
+          </a>
+
+          <a class="link-card reveal" href="https://github.com/spook20000" target="_blank" rel="noopener noreferrer" data-accent="lime">
+            <div class="link-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18c-4.5 1.5-4.5-2.5-6-3m12 6v-3.9c0-1.1.1-1.6-.5-2.2 2.8-.3 5.7-1.4 5.7-6.2a4.8 4.8 0 0 0-1.3-3.4 4.5 4.5 0 0 0-.1-3.4S17.8 1.6 15 3.2a11.7 11.7 0 0 0-6 0C6.2 1.6 5.2 1.9 5.2 1.9a4.5 4.5 0 0 0-.1 3.4 4.8 4.8 0 0 0-1.3 3.4c0 4.8 2.9 5.9 5.7 6.2-.5.5-.6 1-.5 2.2V21"/>
+              </svg>
+            </div>
+            <div class="link-card__copy">
+              <strong>GitHub</strong>
+              <span>Code, Experimente & Open-Source-Projekte</span>
+            </div>
+            <span class="link-card__tag">spook20000</span>
+            <span class="link-card__arrow">↗</span>
+          </a>
+
+          <a class="link-card link-card--featured reveal" href="#projects" data-accent="gold">
+            <div class="link-card__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16v11H4z"/>
+                <path d="m8 7 1.5-3h5L16 7M8 12h8M8 15h5"/>
+              </svg>
+            </div>
+            <div class="link-card__copy">
+              <strong>Meine Projekte</strong>
+              <span>Websites, Bots und aktuelle Builds ansehen</span>
+            </div>
+            <span class="link-card__tag">NEW</span>
+            <span class="link-card__arrow">↓</span>
+          </a>
+        </div>
+
+        <section class="projects" id="projects">
+          <div class="section-heading reveal">
+            <div>
+              <span class="section-kicker">SELECTED WORK</span>
+              <h2>Featured Builds</h2>
+            </div>
+            <span class="section-number">02</span>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card reveal tilt-card">
+              <div class="project-card__visual project-card__visual--nexus">
+                <span class="project-card__label">DISCORD BOT</span>
+                <div class="project-card__logo">N</div>
+                <span class="project-card__version">v2.0</span>
+              </div>
+              <div class="project-card__body">
+                <div>
+                  <h3>Nexus Bot</h3>
+                  <p>Moderation, Tickets, Logging und Community-Tools in einem System.</p>
+                </div>
+                <span class="project-status project-status--offline">OFFLINE</span>
+              </div>
+            </article>
+
+            <article class="project-card reveal tilt-card">
+              <div class="project-card__visual project-card__visual--umbra">
+                <span class="project-card__label">COMMUNITY</span>
+                <div class="project-card__logo">U</div>
+                <span class="project-card__version">SMP</span>
+              </div>
+              <div class="project-card__body">
+                <div>
+                  <h3>Umbra</h3>
+                  <p>Dark Community Hub mit Gaming, Events und eigenem Ökosystem.</p>
+                </div>
+                <span class="project-status project-status--offline">OFFLINE</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="stack-panel glass reveal">
+          <div class="stack-panel__header">
+            <div>
+              <span class="section-kicker">MY STACK</span>
+              <h2>Was ich nutze</h2>
+            </div>
+            <span class="live-clock" id="liveClock">--:--:--</span>
+          </div>
+
+          <div class="tech-list">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>Python</span>
+            <span>Java</span>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal__top">
+              <span></span><span></span><span></span>
+              <p>spook@dev:~</p>
+            </div>
+            <div class="terminal__body">
+              <p><span class="terminal__prefix">$</span> status --current</p>
+              <p class="terminal__success">✓ building something dangerous...</p>
+              <p><span class="terminal__prefix">$</span> <span id="typingText"></span><span class="caret">▋</span></p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer reveal">
+          <p>Designed & coded by <strong>Spook</strong> <span>© <span id="year"></span></span></p>
+          <a href="#top">BACK TO TOP ↑</a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast__icon">✓</span>
+    <span id="toastText">Kopiert</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
