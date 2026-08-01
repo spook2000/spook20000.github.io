@@ -1330,3 +1330,78 @@ h1 {
     display: none;
   }
 }
+
+
+/* Nexus- und Umbra-Projektlinks */
+.project-card--link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-card--link:focus-visible {
+  outline: 2px solid rgba(var(--accent-rgb), .8);
+  outline-offset: 4px;
+}
+
+.project-card--link .project-card__visual {
+  transition: filter .28s ease;
+}
+
+.project-card--link:hover .project-card__visual {
+  filter: brightness(1.12);
+}
+
+.project-card--link:hover .project-card__logo {
+  transform: rotate(0deg) translateZ(30px) scale(1.06);
+}
+
+.project-card__open {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  background: rgba(5,7,14,.55);
+  backdrop-filter: blur(12px);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.project-card--link:hover .project-card__open {
+  border-color: rgba(255,255,255,.38);
+  background: rgba(var(--accent-rgb), .2);
+  transform: translate(2px, -2px);
+}
+
+.project-status--online {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4ade80;
+  border-color: rgba(74,222,128,.28);
+  background: rgba(74,222,128,.08);
+}
+
+.project-status--online i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px rgba(74,222,128,.9);
+  animation: projectOnlinePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes projectOnlinePulse {
+  50% {
+    opacity: .45;
+    transform: scale(.75);
+  }
+}
