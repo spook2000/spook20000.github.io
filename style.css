@@ -977,14 +977,6 @@ img {
   background: #9333ea;
 }
 
-.umbra-visual {
-  background: linear-gradient(135deg, #090911, #1b0d23);
-}
-
-.umbra-visual::before {
-  background: #ec4899;
-}
-
 .project-visual img {
   position: relative;
   z-index: 1;
@@ -1746,5 +1738,30 @@ img {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+  }
+}
+
+
+/* Nexus-only project layout */
+.project-grid {
+  grid-template-columns: 1fr;
+}
+
+.project-card {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .project-card {
+    display: grid;
+    grid-template-columns: minmax(260px, 38%) 1fr;
+  }
+
+  .project-visual {
+    min-height: 100%;
+  }
+
+  .project-body > p {
+    min-height: auto;
   }
 }
