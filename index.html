@@ -2,411 +2,165 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Der offizielle Link-Hub von spook – Discord, Instagram, TikTok, Nexus, Minecraft-Plugins und Gaming.">
-  <meta name="author" content="spook">
-  <meta name="theme-color" content="#07070c">
-
-  <meta property="og:title" content="spook // Developer & Gamer">
-  <meta property="og:description" content="Discord-Bots, Minecraft-Plugins, Socials und Gaming an einem Ort.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07070d">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Spook – Discord-Bot-, Minecraft-Plugin- und Web-Entwicklung. Entdecke Nexus und meine Projekte.">
+  <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/banner.jpg">
-
-  <title>spook // Link Hub</title>
-
+  <meta property="og:title" content="spook — Developer">
+  <meta property="og:description" content="Discord Bots, Minecraft Plugins und moderne Web-Projekte.">
+  <meta property="og:image" content="assets/preview.svg">
+  <meta property="og:locale" content="de_DE">
+  <title>spook — Developer & Nexus</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
-
-<body data-theme="void">
-  <div class="boot-screen" id="bootScreen" aria-hidden="true">
-    <div class="boot-card">
-      <img src="assets/favicon.svg" alt="">
-      <p class="boot-title">&lt;SPOOK_LINK_SYSTEM /&gt;</p>
-      <div class="boot-log" id="bootLog"></div>
-      <div class="boot-bar"><span id="bootBar"></span></div>
-      <small>INITIALIZING PROFILE...</small>
-    </div>
-  </div>
-
+<body>
   <div class="noise" aria-hidden="true"></div>
-  <div class="grid-background" aria-hidden="true"></div>
   <div class="aurora aurora-one" aria-hidden="true"></div>
   <div class="aurora aurora-two" aria-hidden="true"></div>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-  <div class="particles" id="particles" aria-hidden="true"></div>
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
-  <header class="topbar glass">
+  <header class="topbar container">
     <a class="brand" href="#top" aria-label="Zur Startseite">
-      <img src="assets/favicon.svg" alt="">
-      <span>&lt;<strong>spook</strong>.link /&gt;</span>
+      <span class="brand-mark">S</span>
+      <span class="brand-text">spook<span class="brand-caret">_</span></span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Seitennavigation">
-      <a href="#links">LINKS</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#plugins">PLUGINS</a>
-      <a href="#gaming">GAMING</a>
-    </nav>
-
-    <div class="top-actions">
-      <button class="command-button" id="commandButton" type="button" aria-label="Schnellmenü öffnen">
-        <span>⌘</span> K
-      </button>
-
-      <button class="icon-button" id="themeButton" type="button" aria-label="Farbstil wechseln" title="Farbstil wechseln">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
-        </svg>
-      </button>
-
-      <button class="icon-button" id="shareButton" type="button" aria-label="Profil teilen" title="Profil teilen">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="18" cy="5" r="2.5"/>
-          <circle cx="6" cy="12" r="2.5"/>
-          <circle cx="18" cy="19" r="2.5"/>
-          <path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"/>
-        </svg>
+    <div class="topbar-actions">
+      <span class="availability"><span class="availability-dot"></span> verfügbar</span>
+      <button class="icon-button" id="shareButton" type="button" aria-label="Seite teilen" title="Seite teilen">
+        <svg aria-hidden="true"><use href="#icon-share"></use></svg>
       </button>
     </div>
   </header>
 
-  <main class="page-shell" id="top">
-    <aside class="profile-column">
-      <article class="profile-card glass reveal tilt-card">
-        <div class="profile-banner">
-          <img src="assets/banner.jpg" alt="Cyber-Banner von spook">
-          <div class="profile-banner-overlay"></div>
-        </div>
-
-        <div class="avatar-wrap">
-          <div class="avatar-orbit orbit-one"></div>
-          <div class="avatar-orbit orbit-two"></div>
-          <img src="assets/avatar.jpg" alt="Cyber-Profilbild von spook">
-          <span class="online-dot" title="Online"></span>
-        </div>
-
-        <div class="availability">
-          <span></span>
-          AVAILABLE FOR PROJECTS
-        </div>
-
-        <h1>
-          <span class="glitch" data-text="SPOOK">SPOOK</span>
-          <em>/ DEV</em>
-        </h1>
-
-        <p class="profile-description">
-          Nexus, Minecraft-Plugins und moderne Websites
-          mit Gaming- und Cyber-Design.
-        </p>
-
-        <button class="discord-handle copy-discord" type="button">
-          <span class="signal"></span>
-          Spook912
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="8" y="8" width="11" height="11" rx="2"/>
-            <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
-          </svg>
-        </button>
-
-        <div class="profile-stats">
-          <div><strong class="counter" data-target="7" data-suffix="+">0+</strong><span>Projekte</span></div>
-          <div><strong class="counter" data-target="5" data-suffix="+">0+</strong><span>Plugins</span></div>
-          <div><strong>PS5</strong><span>Plattform</span></div>
-        </div>
-
-        <div class="profile-status">
-          <span><i></i> Current mood</span>
-          <strong>Probably coding...</strong>
-        </div>
-      </article>
-
-      <article class="system-card glass reveal">
-        <div class="window-header">
-          <span><i></i> SPOOK@SYSTEM</span>
-          <small>LIVE</small>
-        </div>
-
-        <div class="system-body">
-          <p><b>&gt;</b> identity: <span>"developer_gamer"</span></p>
-          <p><b>&gt;</b> focus: <span>"bots + plugins"</span></p>
-          <p><b>&gt;</b> discord: <span>"Spook912"</span></p>
-          <p><b>&gt;</b> platform: <span>"PlayStation 5"</span></p>
-          <p><b>&gt;</b> status: <em>ONLINE</em></p>
-          <p><b>&gt;</b> <span id="typingText"></span><i class="caret">▋</i></p>
-        </div>
-
-        <div class="clock-line">
-          <span>LOCAL TIME</span>
-          <strong id="liveClock">--:--:--</strong>
-        </div>
-      </article>
-    </aside>
-
-    <div class="content-column">
-      <section class="content-section" id="links">
-        <div class="section-heading reveal">
-          <div>
-            <span class="section-kicker">01 // CONNECT</span>
-            <h2>MEINE <strong>LINKS</strong></h2>
-          </div>
-          <span class="section-number">01</span>
-        </div>
-
-        <div class="link-stack">
-          <button class="link-card discord-card copy-discord reveal" type="button" data-accent="discord">
-            <div class="link-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7.2 6.3A13 13 0 0 1 12 5.4a13 13 0 0 1 4.8.9c1.3 1.8 2.1 4 2.25 6.3a10.8 10.8 0 0 1-3.1 2.4l-.8-1.1a7.6 7.6 0 0 0 1.25-.7c-2.8 1.3-6 1.3-8.8 0 .4.3.8.5 1.25.7l-.8 1.1a10.8 10.8 0 0 1-3.1-2.4A12 12 0 0 1 7.2 6.3Z"/>
-                <circle cx="9.2" cy="11.1" r="1"/>
-                <circle cx="14.8" cy="11.1" r="1"/>
-              </svg>
-            </div>
-            <div class="link-copy">
-              <strong>Discord</strong>
-              <span>Klicken, um meinen Discord-Namen zu kopieren</span>
-            </div>
-            <span class="link-tag">Spook912</span>
-            <span class="link-arrow">COPY</span>
-          </button>
-
-          <a class="link-card reveal" href="https://www.instagram.com/spook_1732/" target="_blank" rel="noopener noreferrer" data-accent="instagram">
-            <div class="link-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="1"/>
-              </svg>
-            </div>
-            <div class="link-copy">
-              <strong>Instagram</strong>
-              <span>Profil, Bilder und Updates</span>
-            </div>
-            <span class="link-tag">@spook_1732</span>
-            <span class="link-arrow">↗</span>
-          </a>
-
-          <a class="link-card reveal" href="https://www.tiktok.com/@spook2070" target="_blank" rel="noopener noreferrer" data-accent="tiktok">
-            <div class="link-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M14.5 4v10.2a4.7 4.7 0 1 1-4-4.65"/>
-                <path d="M14.5 4c1.05 2.35 2.65 3.65 5 3.9"/>
-              </svg>
-            </div>
-            <div class="link-copy">
-              <strong>TikTok</strong>
-              <span>Gaming, Clips und Coding-Content</span>
-            </div>
-            <span class="link-tag">@spook2070</span>
-            <span class="link-arrow">↗</span>
-          </a>
-
-          <a class="link-card featured reveal" href="https://spook2000.github.io/nexus/" target="_blank" rel="noopener noreferrer" data-accent="nexus">
-            <div class="link-icon image-icon">
-              <img src="assets/nexus.svg" alt="">
-            </div>
-            <div class="link-copy">
-              <strong>Nexus Website</strong>
-              <span>Multi-Server Bot, Setup-Anleitung und Command-Datenbank</span>
-            </div>
-            <span class="link-tag">v2.0.1</span>
-            <span class="link-arrow">↗</span>
-          </a>
-        </div>
-
-        <div class="quick-grid">
-          <a class="quick-card reveal" href="https://spook2000.github.io/nexus/commands.html" target="_blank" rel="noopener noreferrer">
-            <span>⌘</span>
-            <div><strong>Nexus Commands</strong><small>Alle Slash-Commands durchsuchen</small></div>
-            <b>↗</b>
-          </a>
-
-          <a class="quick-card reveal" href="https://spook2000.github.io/nexus/setup.html" target="_blank" rel="noopener noreferrer">
-            <span>⚙</span>
-            <div><strong>Nexus Setup</strong><small>Einrichtung für jeden Discord-Server</small></div>
-            <b>↗</b>
-          </a>
-        </div>
-      </section>
-
-      <section class="content-section" id="projects">
-        <div class="section-heading reveal">
-          <div>
-            <span class="section-kicker">02 // MAIN BOT</span>
-            <h2>MAIN <strong>PROJECT</strong></h2>
-          </div>
-          <span class="section-number">02</span>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card glass reveal tilt-card">
-            <div class="project-visual nexus-visual">
-              <img src="assets/nexus.svg" alt="Nexus Logo">
-              <span>DISCORD BOT</span>
-              <strong>MULTI-SERVER</strong>
-            </div>
-            <div class="project-body">
-              <div class="project-title">
-                <div><h3>Nexus</h3><p>Multipurpose Discord Bot</p></div>
-                <span class="project-version">2.0.1</span>
-              </div>
-              <p>
-                Eigene Einstellungen pro Server, Setup Assistant, Quickstart,
-                Tickets, Bewerbungen, Security, Economy und Minecraft-Status.
-              </p>
-              <div class="tag-row">
-                <span>83 Commands</span><span>Discord.js</span><span>Multi-Server</span>
-              </div>
-              <a href="https://spook2000.github.io/nexus/" target="_blank" rel="noopener noreferrer">
-                WEBSITE OPENEN <b>↗</b>
-              </a>
-            </div>
-          </article>
-</div>
-      </section>
-
-      <section class="content-section" id="plugins">
-        <div class="section-heading reveal">
-          <div>
-            <span class="section-kicker">03 // MINECRAFT DEVELOPMENT</span>
-            <h2>PLUGIN <strong>CONCEPTS</strong></h2>
-          </div>
-          <span class="section-number">03</span>
-        </div>
-
-        <div class="plugin-panel glass reveal">
-          <div class="plugin-panel-head">
-            <img src="assets/plugins.svg" alt="">
-            <div>
-              <span>JAVA • PAPER • VELOCITY</span>
-              <h3>Minecraft Plugin Collection</h3>
-            </div>
-            <strong>5 IDEAS</strong>
-          </div>
-
-          <div class="plugin-list">
-            <div><span>01</span><strong>DiscordBridge</strong><small>Minecraft-Chat und Status mit Discord verbinden</small></div>
-            <div><span>02</span><strong>NexusGuard</strong><small>Logging, Rollback und Server-Sicherheit</small></div>
-            <div><span>03</span><strong>SpookHomes</strong><small>Homes, Warps, TPA und moderne Menüs</small></div>
-            <div><span>04</span><strong>ServerPulse</strong><small>Netzwerkstatus und Wartungsmodus</small></div>
-            <div><span>05</span><strong>CustomItems</strong><small>Eigene Items, Fähigkeiten und Rezepte</small></div>
-          </div>
-
-          <p class="concept-note">
-            Diese Plugin-Karten zeigen geplante beziehungsweise konzeptionelle Projekte und sind nicht als fertige Downloads gekennzeichnet.
-          </p>
-        </div>
-      </section>
-
-      <section class="content-section" id="gaming">
-        <div class="section-heading reveal">
-          <div>
-            <span class="section-kicker">04 // PLAYSTATION 5</span>
-            <h2>GAMING <strong>PROFILE</strong></h2>
-          </div>
-          <span class="section-number">04</span>
-        </div>
-
-        <div class="gaming-grid">
-          <article class="game-card valorant reveal">
-            <div class="game-top">
-              <span class="game-mark">V</span>
-              <div><h3>Valorant</h3><p>PS5 • EU</p></div>
-            </div>
-            <div class="rank-data">
-              <span>PEAK RANK</span>
-              <strong>RADIANT</strong>
-            </div>
-            <div class="rank-line"><i></i></div>
-          </article>
-
-          <article class="game-card rocket reveal">
-            <div class="game-top">
-              <span class="game-mark">RL</span>
-              <div><h3>Rocket League</h3><p>PS5 • 2V2</p></div>
-            </div>
-            <div class="rank-data">
-              <span>PEAK RANK</span>
-              <strong>DIAMOND III</strong>
-            </div>
-            <div class="rank-line"><i></i></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="stack-panel glass reveal">
-        <div class="stack-head">
-          <div>
-            <span class="section-kicker">MY STACK</span>
-            <h2>TOOLS & TECHNOLOGIES</h2>
-          </div>
-          <span class="live-clock-mobile" id="liveClockMobile">--:--:--</span>
-        </div>
-
-        <div class="tech-list">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          <span>Node.js</span><span>Discord.js</span><span>Java</span>
-          <span>Python</span><span>Paper</span><span>Velocity</span>
-        </div>
-
-        <div class="terminal">
-          <div class="terminal-top">
-            <span></span><span></span><span></span>
-            <p>spook@dev:~</p>
-          </div>
-          <div class="terminal-body">
-            <p><b>$</b> status --current</p>
-            <p class="terminal-success">✓ building something dangerous...</p>
-            <p><b>$</b> <span id="typingTextMobile"></span><i class="caret">▋</i></p>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer reveal">
-        <div>
-          <strong>&lt;spook /&gt;</strong>
-          <p>Discord-Bots • Minecraft-Plugins • Gaming</p>
-        </div>
-
-        <p>Designed & coded for <strong>spook</strong> © <span id="year"></span></p>
-
-        <a href="#top">BACK TO TOP ↑</a>
-      </footer>
-    </div>
-  </main>
-
-  <button class="back-top" id="backTop" type="button" aria-label="Nach oben scrollen">↑</button>
-
-  <div class="toast" id="toast" role="status" aria-live="polite">
-    <span>✓</span>
-    <p id="toastText">Kopiert</p>
-  </div>
-
-  <div class="command-palette" id="commandPalette" aria-hidden="true">
-    <div class="command-backdrop" data-close-command></div>
-
-    <div class="command-dialog">
-      <div class="command-search">
-        <span>⌕</span>
-        <input id="commandInput" type="text" placeholder="Suche nach einem Bereich..." autocomplete="off">
-        <kbd>ESC</kbd>
+  <main id="top" class="page-shell container">
+    <section class="profile-card glass reveal" aria-labelledby="profileName">
+      <div class="profile-grid"></div>
+      <div class="profile-topline">
+        <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <span class="terminal-label">~/spook/profile</span>
       </div>
 
-      <div class="command-results">
-        <button type="button" data-target-section="links"><span>01</span><strong>Meine Links</strong><small>CONNECT</small></button>
-        <button type="button" data-target-section="projects"><span>02</span><strong>Projekte</strong><small>NEXUS</small></button>
-        <button type="button" data-target-section="plugins"><span>03</span><strong>Plugins</strong><small>MINECRAFT</small></button>
-        <button type="button" data-target-section="gaming"><span>04</span><strong>Gaming</strong><small>PS5</small></button>
-        <button type="button" data-copy-command><span>DC</span><strong>Discord kopieren</strong><small>Spook912</small></button>
-        <a href="https://spook2000.github.io/nexus/" target="_blank" rel="noopener noreferrer">
-          <span>NX</span><strong>Nexus Website</strong><small>OPEN ↗</small>
+      <div class="avatar-shell" aria-hidden="true">
+        <div class="avatar-ring"></div>
+        <div class="avatar">S</div>
+        <span class="online-dot"></span>
+      </div>
+
+      <p class="eyebrow"><span>developer</span> • <span>gamer</span> • <span>creator</span></p>
+      <h1 id="profileName">spook<span class="accent-dot">.</span></h1>
+      <p class="profile-handle" id="discordHandle">@Spook912</p>
+      <p class="profile-bio">Ich entwickle Discord Bots, Minecraft Plugins und moderne Web-Erlebnisse. Mein Hauptprojekt: <strong>Nexus</strong>.</p>
+
+      <div class="profile-tags" aria-label="Schwerpunkte">
+        <span><svg aria-hidden="true"><use href="#icon-bot"></use></svg> Discord.js</span>
+        <span><svg aria-hidden="true"><use href="#icon-cube"></use></svg> Minecraft</span>
+        <span><svg aria-hidden="true"><use href="#icon-code"></use></svg> Web Dev</span>
+      </div>
+
+      <button class="copy-user" id="copyDiscord" type="button">
+        <span class="copy-user-left"><svg aria-hidden="true"><use href="#icon-discord"></use></svg> Spook912</span>
+        <span class="copy-label">kopieren</span>
+      </button>
+    </section>
+
+    <section class="links-column" aria-label="Meine Links">
+      <article class="nexus-card glass reveal tilt-card">
+        <div class="nexus-head">
+          <div class="nexus-logo" aria-hidden="true">N</div>
+          <div>
+            <p class="card-kicker">MAIN PROJECT</p>
+            <h2>Nexus</h2>
+          </div>
+          <span class="status-badge"><span></span> ONLINE</span>
+        </div>
+        <p class="nexus-description">Ein modularer Discord Bot für Moderation, Tickets, Verifizierung, Logging, Bewerbungen, Community-Systeme und Minecraft-Server.</p>
+        <div class="nexus-features" aria-label="Nexus Features">
+          <span>All-in-One</span><span>Multi-Server</span><span>Free</span>
+        </div>
+        <div class="nexus-actions">
+          <a class="primary-button configurable-link" data-link="nexusInvite" href="#">
+            <svg aria-hidden="true"><use href="#icon-plus"></use></svg>
+            Nexus hinzufügen
+            <svg class="button-arrow" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </a>
+          <a class="secondary-button configurable-link" data-link="nexusWebsite" href="#">
+            <svg aria-hidden="true"><use href="#icon-globe"></use></svg>
+            Website öffnen
+          </a>
+        </div>
+      </article>
+
+      <div class="link-list">
+        <a class="link-card glass reveal configurable-link" data-link="discord" href="#">
+          <span class="link-icon discord"><svg aria-hidden="true"><use href="#icon-discord"></use></svg></span>
+          <span class="link-copy"><strong>Discord</strong><small>Kontakt & Zusammenarbeit</small></span>
+          <span class="link-arrow"><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+        </a>
+
+        <a class="link-card glass reveal configurable-link" data-link="instagram" href="#">
+          <span class="link-icon instagram"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg></span>
+          <span class="link-copy"><strong>Instagram</strong><small>@spook_1732</small></span>
+          <span class="link-arrow"><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+        </a>
+
+        <a class="link-card glass reveal configurable-link" data-link="tiktok" href="#">
+          <span class="link-icon tiktok"><svg aria-hidden="true"><use href="#icon-tiktok"></use></svg></span>
+          <span class="link-copy"><strong>TikTok</strong><small>@spook2070</small></span>
+          <span class="link-arrow"><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
+        </a>
+
+        <a class="link-card glass reveal configurable-link" data-link="email" href="#">
+          <span class="link-icon mail"><svg aria-hidden="true"><use href="#icon-mail"></use></svg></span>
+          <span class="link-copy"><strong>Projekt anfragen</strong><small>Discord Bot, Plugin oder Website</small></span>
+          <span class="link-arrow"><svg aria-hidden="true"><use href="#icon-arrow"></use></svg></span>
         </a>
       </div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
+      <section class="skills-card glass reveal" aria-labelledby="skillsTitle">
+        <div class="section-heading">
+          <div>
+            <p class="card-kicker">WHAT I BUILD</p>
+            <h2 id="skillsTitle">Development</h2>
+          </div>
+          <span class="code-pill">&lt;/&gt;</span>
+        </div>
+        <div class="skill-grid">
+          <div class="skill-item"><span class="skill-number">01</span><strong>Discord Bots</strong><small>Moderation, Panels, Automationen</small></div>
+          <div class="skill-item"><span class="skill-number">02</span><strong>Minecraft Plugins</strong><small>Paper, Spigot und Velocity</small></div>
+          <div class="skill-item"><span class="skill-number">03</span><strong>Web Development</strong><small>Responsive und modern</small></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>designed & built by <strong>spook</strong></p>
+    <p><span class="footer-dot"></span> probably coding...</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="icon-share" viewBox="0 0 24 24"><path d="M12 16V3m0 0 5 5m-5-5L7 8M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></symbol>
+    <symbol id="icon-bot" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M9 12h.01M15 12h.01M9 16h6M12 7V3m-2 0h4"/></symbol>
+    <symbol id="icon-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 9-3 3 3 3m8-6 3 3-3 3m-2-9-4 12"/></symbol>
+    <symbol id="icon-discord" viewBox="0 0 24 24"><path d="M18.9 5.3A16 16 0 0 0 15 4l-.5 1.1a14.5 14.5 0 0 0-5 0L9 4a16 16 0 0 0-3.9 1.3C2.6 9 1.9 12.5 2.2 16a16 16 0 0 0 4.8 2.5l1.2-1.7a10 10 0 0 1-1.9-.9l.5-.4c3.6 1.7 7.5 1.7 11.1 0l.5.4c-.6.4-1.3.7-1.9.9l1.2 1.7a16 16 0 0 0 4.8-2.5c.4-4.1-.7-7.5-3.6-10.7Z"/><path d="M9.2 14.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm5.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.2 2.5 3.3 5.5 3.3 9S14.2 18.5 12 21c-2.2-2.5-3.3-5.5-3.3-9S9.8 5.5 12 3Z"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M14 4v10.2a4.2 4.2 0 1 1-3.4-4.1"/><path d="M14 4c.7 2.3 2.2 3.8 4.5 4.2"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+  </svg>
 </body>
 </html>
