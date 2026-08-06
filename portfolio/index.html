@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Offizielles Gaming- und Developer-Portfolio von spook. Discord-Bots, Minecraft-Plugins und Gaming.">
+  <meta name="author" content="spook">
+  <meta name="theme-color" content="#070711">
+  <meta property="og:title" content="spook — Developer & Gamer">
+  <meta property="og:description" content="Discord-Bots, Minecraft-Plugins und Gaming-Projekte.">
+  <meta property="og:image" content="assets/banner.jpg">
+  <title>spook — Developer & Gamer</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="boot-screen" id="bootScreen" aria-hidden="true">
+    <div class="boot-box">
+      <img src="assets/logo.svg" alt="">
+      <div class="boot-title">&lt;SPOOK_SYSTEM /&gt;</div>
+      <div class="boot-lines" id="bootLines"></div>
+      <div class="boot-progress"><span id="bootProgress"></span></div>
+      <small>INITIALIZING PORTFOLIO...</small>
+    </div>
+  </div>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <a class="sidebar-logo" href="#home" aria-label="Startseite">
+      <img src="assets/logo.svg" alt="Spook Logo">
+    </a>
+
+    <nav class="side-nav" aria-label="Seitennavigation">
+      <a class="side-link active" href="#home" data-label="Home">
+        <span class="nav-icon">⌂</span><small>HOME</small>
+      </a>
+      <a class="side-link" href="#about" data-label="Über mich">
+        <span class="nav-icon">◉</span><small>ABOUT</small>
+      </a>
+      <a class="side-link" href="#projects" data-label="Projekte">
+        <span class="nav-icon">&lt;/&gt;</span><small>PROJECTS</small>
+      </a>
+      <a class="side-link" href="#plugins" data-label="Plugins">
+        <span class="nav-icon">◇</span><small>PLUGINS</small>
+      </a>
+      <a class="side-link" href="#gaming" data-label="Gaming">
+        <span class="nav-icon">⌁</span><small>GAMING</small>
+      </a>
+      <a class="side-link" href="#skills" data-label="Skills">
+        <span class="nav-icon">⌁</span><small>SKILLS</small>
+      </a>
+      <a class="side-link" href="#contact" data-label="Kontakt">
+        <span class="nav-icon">✉</span><small>CONTACT</small>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button class="sidebar-action" id="themeToggle" type="button" aria-label="Farbstil wechseln">◐</button>
+      <button class="sidebar-action" id="soundToggle" type="button" aria-label="Sounds umschalten">♪</button>
+      <small>v2.0.0</small>
+    </div>
+  </aside>
+
+  <header class="topbar" id="topbar">
+    <a class="wordmark" href="#home">&lt;<strong>spook</strong> /&gt;</a>
+
+    <nav class="top-nav" id="topNav" aria-label="Hauptnavigation">
+      <a class="top-link active" href="#home">HOME</a>
+      <a class="top-link" href="#about">ABOUT</a>
+      <a class="top-link" href="#projects">PROJECTS</a>
+      <a class="top-link" href="#plugins">PLUGINS</a>
+      <a class="top-link" href="#gaming">GAMING</a>
+      <a class="top-link" href="#skills">SKILLS</a>
+      <a class="top-link" href="#contact">CONTACT</a>
+      <a class="top-link top-linkhub" href="../">LINKHUB ↗</a>
+    </nav>
+
+    <div class="top-actions">
+      <a class="linkhub-return" href="../" aria-label="Zurück zum LinkHub">← <span>LINKHUB</span></a>
+      <button class="mini-button" id="commandButton" type="button" title="Command-Menü öffnen">⌘ K</button>
+      <div class="online-pill"><span></span> ONLINE</div>
+      <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Menü öffnen" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="hero section-anchor" id="home">
+      <div class="hero-art" aria-hidden="true">
+        <img src="assets/hero-character.jpg" alt="">
+        <div class="hero-art-overlay"></div>
+      </div>
+
+      <div class="hero-content reveal">
+        <p class="kicker">DEVELOPER <span>•</span> GAMER <span>•</span> CREATOR</p>
+        <h1>HI, I'M<br><strong>SPOOK_</strong></h1>
+        <p class="hero-sub">
+          Ich baue Discord-Bots, Minecraft-Plugins und moderne Web-Erlebnisse
+          mit <span>Leidenschaft</span>.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary magnetic" href="#projects">VIEW MY WORK <b>→</b></a>
+          <button class="btn btn-outline magnetic copy-discord" type="button">
+            <span class="discord-mark">◉</span> ADD ME ON DISCORD
+          </button>
+        </div>
+
+        <div class="social-strip">
+          <button class="social-item copy-discord" type="button">
+            <span class="social-icon discord-bg">◉</span>
+            <span><small>Discord</small><strong>Spook912</strong></span>
+          </button>
+          <a class="social-item" href="https://www.instagram.com/spook_1732/" target="_blank" rel="noopener">
+            <span class="social-icon">◎</span>
+            <span><small>Instagram</small><strong>spook_1732</strong></span>
+          </a>
+          <a class="social-item" href="https://www.tiktok.com/@spook2070" target="_blank" rel="noopener">
+            <span class="social-icon">♪</span>
+            <span><small>TikTok</small><strong>spook2070</strong></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-panels reveal">
+        <article class="terminal-card glass-card">
+          <div class="window-head">
+            <span><i></i> SYSTEM STATUS</span>
+            <div>_ □ ×</div>
+          </div>
+          <div class="terminal-body">
+            <p><b>&gt;</b> Name: <span>spook</span></p>
+            <p><b>&gt;</b> Status: <em>ONLINE</em></p>
+            <p><b>&gt;</b> Focus: Development & Gaming</p>
+            <p><b>&gt;</b> Projects: 7+</p>
+            <p><b>&gt;</b> Location: Germany</p>
+            <p><b>&gt;</b> Current Mood: Probably Coding...</p>
+            <p><b>&gt;</b> Loading awesome projects... <strong>100%</strong></p>
+            <div class="terminal-progress"><span></span></div>
+          </div>
+        </article>
+
+        <article class="discord-profile glass-card">
+          <div class="window-head">
+            <span>◉ DISCORD PROFILE</span>
+          </div>
+          <div class="discord-profile-body">
+            <div class="avatar">
+              <img src="assets/avatar.jpg" alt="Cyber-Profilbild von spook">
+              <i></i>
+            </div>
+            <div class="discord-info">
+              <h2>spook <span>◆</span></h2>
+              <p>Spook912</p>
+              <div class="custom-status"><i></i><span>Probably coding...<small>Custom Status</small></span></div>
+            </div>
+            <button class="copy-mini copy-discord" type="button">COPY</button>
+          </div>
+        </article>
+      </div>
+
+      <a class="scroll-cue" href="#projects">
+        <span>SCROLL DOWN</span>
+        <i>↓</i>
+      </a>
+    </section>
+
+    <section class="content-section section-anchor" id="about">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-kicker">01 // ABOUT</p>
+          <h2>WHO IS <span>SPOOK?</span></h2>
+        </div>
+        <p class="section-note">Gamer. Entwickler. Creator.</p>
+      </div>
+
+      <div class="about-layout">
+        <article class="about-banner reveal">
+          <img src="assets/banner.jpg" alt="Cyber-Banner von spook">
+          <div class="about-banner-overlay"></div>
+          <div class="about-banner-copy">
+            <span class="live-badge"><i></i> CURRENTLY CODING</span>
+            <h3>Code is my weapon.<br>Creativity is my power.</h3>
+          </div>
+        </article>
+
+        <div class="about-text reveal">
+          <p class="lead">Ich entwickle Projekte rund um <strong>Discord</strong>, <strong>Minecraft</strong> und moderne Websites.</p>
+          <p>Mein Ziel ist nicht einfach nur „funktioniert“. Ein Projekt soll clean aussehen, sinnvoll aufgebaut sein und sich stark anfühlen. Genau deshalb kombiniere ich Technik mit Gaming-Design.</p>
+          <div class="about-facts">
+            <div><span>NAME</span><strong>spook</strong></div>
+            <div><span>LOCATION</span><strong>Germany</strong></div>
+            <div><span>FOCUS</span><strong>Bots & Plugins</strong></div>
+            <div><span>STATUS</span><strong class="green">Available</strong></div>
+          </div>
+          <div class="chip-row">
+            <span>Discord Bots</span><span>Minecraft Plugins</span><span>Frontend</span><span>Gaming</span><span>UI Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-anchor" id="projects">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-kicker">02 // FEATURED WORK</p>
+          <h2>MY <span>PROJECTS</span></h2>
+        </div>
+        <button class="text-button" type="button" id="showAllProjects">SHOW ALL PROJECTS →</button>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal" data-project="nexus">
+          <div class="project-top">
+            <img src="assets/nexus.svg" alt="">
+            <div><h3>NEXUS</h3><p>Advanced Discord Bot</p></div>
+            <span class="status-tag active">ACTIVE</span>
+          </div>
+          <p>All-in-one Discord-Bot mit Moderation, Tickets, Logging, Economy, Verification und Server-Setup.</p>
+          <div class="tag-row"><span>JavaScript</span><span>Discord.js</span><span>MongoDB</span></div>
+          <button class="card-link open-project" type="button">VIEW DETAILS <b>↗</b></button>
+        </article>
+
+        <article class="project-card reveal" data-project="dashboard">
+          <div class="project-top">
+            <img src="assets/logo.svg" alt="">
+            <div><h3>NEXUS PANEL</h3><p>Server Configuration UI</p></div>
+            <span class="status-tag concept">CONCEPT</span>
+          </div>
+          <p>Ein modernes Dashboard, über das Nutzer ihren Discord-Server auswählen und Nexus konfigurieren können.</p>
+          <div class="tag-row"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <button class="card-link open-project" type="button">VIEW DETAILS <b>↗</b></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section section-anchor" id="plugins">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-kicker">03 // MINECRAFT DEVELOPMENT</p>
+          <h2>TOP <span>PLUGINS</span></h2>
+        </div>
+        <p class="section-note">Paper • Velocity • Java</p>
+      </div>
+
+      <div class="plugin-grid">
+        <article class="plugin-card reveal" data-project="bridge">
+          <img src="assets/bridge.svg" alt="">
+          <div class="plugin-title"><h3>DiscordBridge</h3><span>VELOCITY</span></div>
+          <p>Synchronisiert Minecraft-Chat, Join/Leave und Statusmeldungen mit Discord.</p>
+          <div class="tag-row"><span>Velocity</span><span>1.21+</span></div>
+          <button class="open-project" type="button">DETAILS →</button>
+        </article>
+
+        <article class="plugin-card reveal" data-project="guard">
+          <img src="assets/guard.svg" alt="">
+          <div class="plugin-title"><h3>NexusGuard</h3><span>PAPER</span></div>
+          <p>Anti-Grief, Logging, Rollback, Warnsystem und Sicherheitsmodule für Minecraft-Server.</p>
+          <div class="tag-row"><span>Paper</span><span>Security</span></div>
+          <button class="open-project" type="button">DETAILS →</button>
+        </article>
+
+        <article class="plugin-card reveal" data-project="homes">
+          <img src="assets/homes.svg" alt="">
+          <div class="plugin-title"><h3>SpookHomes</h3><span>PAPER</span></div>
+          <p>Homes, Warps, Teleport-Anfragen, Cooldowns und moderne Menüs in einem Plugin.</p>
+          <div class="tag-row"><span>Paper</span><span>GUI</span></div>
+          <button class="open-project" type="button">DETAILS →</button>
+        </article>
+
+        <article class="plugin-card reveal extra-plugin" data-project="pulse">
+          <img src="assets/pulse.svg" alt="">
+          <div class="plugin-title"><h3>ServerPulse</h3><span>VELOCITY</span></div>
+          <p>Live-Spielerzahlen, Netzwerkstatus, Wartungsmodus und Discord-Status in Echtzeit.</p>
+          <div class="tag-row"><span>Velocity</span><span>Network</span></div>
+          <button class="open-project" type="button">DETAILS →</button>
+        </article>
+
+        <article class="plugin-card reveal extra-plugin" data-project="items">
+          <img src="assets/items.svg" alt="">
+          <div class="plugin-title"><h3>CustomItems</h3><span>PAPER</span></div>
+          <p>Eigene Items, Fähigkeiten, Rezepte, Seltenheiten und konfigurierbare Effekte.</p>
+          <div class="tag-row"><span>Paper</span><span>Items</span></div>
+          <button class="open-project" type="button">DETAILS →</button>
+        </article>
+      </div>
+
+      <button class="expand-button reveal" id="expandPlugins" type="button">SHOW MORE PLUGINS ↓</button>
+    </section>
+
+    <section class="content-section section-anchor" id="gaming">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-kicker">04 // GAMING</p>
+          <h2>GAMING <span>STATS</span></h2>
+        </div>
+        <div class="platform-badge"><img src="assets/ps5.svg" alt="PlayStation 5"></div>
+      </div>
+
+      <div class="gaming-grid">
+        <article class="game-card valorant reveal">
+          <div class="game-head">
+            <span class="game-logo">V</span>
+            <div><h3>VALORANT</h3><p>TACTICAL SHOOTER</p></div>
+          </div>
+          <div class="rank-block">
+            <img src="assets/radiant.svg" alt="Radiant Rang">
+            <div><span>PEAK RANK</span><strong>RADIANT</strong></div>
+          </div>
+          <div class="game-details">
+            <span>PLATFORM <strong>PS5</strong></span>
+            <span>REGION <strong>EU</strong></span>
+          </div>
+        </article>
+
+        <article class="game-card rocket reveal">
+          <div class="game-head">
+            <span class="game-logo">RL</span>
+            <div><h3>ROCKET LEAGUE</h3><p>COMPETITIVE SPORTS</p></div>
+          </div>
+          <div class="rank-block">
+            <img src="assets/diamond.svg" alt="Diamond III Rang">
+            <div><span>PEAK RANK</span><strong>DIAMOND III</strong></div>
+          </div>
+          <div class="game-details">
+            <span>PLATFORM <strong>PS5</strong></span>
+            <span>MODE <strong>2V2</strong></span>
+          </div>
+        </article>
+
+        <article class="game-card minecraft reveal">
+          <div class="game-head">
+            <span class="game-logo">MC</span>
+            <div><h3>MINECRAFT</h3><p>DEVELOPMENT</p></div>
+          </div>
+          <div class="rank-block">
+            <img src="assets/bridge.svg" alt="">
+            <div><span>FOCUS</span><strong>PLUGIN DEV</strong></div>
+          </div>
+          <div class="game-details">
+            <span>EDITION <strong>JAVA</strong></span>
+            <span>TYPE <strong>PLUGINS</strong></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section section-anchor" id="skills">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-kicker">05 // TOOLKIT</p>
+          <h2>MY <span>SKILLS</span></h2>
+        </div>
+        <p class="section-note">Always learning. Always building.</p>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skill-list reveal">
+          <div class="skill-row"><div><span>JS</span><strong>JavaScript</strong><b>90%</b></div><div class="skill-track"><i data-width="90"></i></div></div>
+          <div class="skill-row"><div><span>N</span><strong>Node.js</strong><b>85%</b></div><div class="skill-track"><i data-width="85"></i></div></div>
+          <div class="skill-row"><div><span>HC</span><strong>HTML / CSS</strong><b>95%</b></div><div class="skill-track"><i data-width="95"></i></div></div>
+          <div class="skill-row"><div><span>J</span><strong>Java</strong><b>75%</b></div><div class="skill-track"><i data-width="75"></i></div></div>
+        </div>
+
+        <div class="skill-list reveal">
+          <div class="skill-row"><div><span>PY</span><strong>Python</strong><b>65%</b></div><div class="skill-track"><i data-width="65"></i></div></div>
+          <div class="skill-row"><div><span>MC</span><strong>Minecraft Dev</strong><b>90%</b></div><div class="skill-track"><i data-width="90"></i></div></div>
+          <div class="skill-row"><div><span>DC</span><strong>Discord.js</strong><b>90%</b></div><div class="skill-track"><i data-width="90"></i></div></div>
+          <div class="skill-row"><div><span>UI</span><strong>UI / Design</strong><b>80%</b></div><div class="skill-track"><i data-width="80"></i></div></div>
+        </div>
+      </div>
+
+      <div class="stats-grid reveal">
+        <div><span class="counter" data-target="7" data-suffix="+">0+</span><small>PROJECTS</small></div>
+        <div><span class="counter" data-target="5" data-suffix="+">0+</span><small>PLUGINS</small></div>
+        <div><span class="counter" data-target="100" data-suffix="%">0%</span><small>PASSION</small></div>
+        <div><span class="counter" data-target="24" data-suffix="/7">0/7</span><small>CODING MODE</small></div>
+      </div>
+    </section>
+
+    <section class="contact-section section-anchor" id="contact">
+      <div class="contact-card reveal">
+        <div class="contact-character">
+          <img src="assets/avatar.jpg" alt="Profilbild von spook">
+        </div>
+        <div class="contact-copy">
+          <p class="section-kicker">06 // CONTACT</p>
+          <h2>LET'S BUILD<br>SOMETHING <span>AMAZING</span></h2>
+          <p>Du hast eine Idee oder willst mich erreichen? Discord ist der schnellste Weg.</p>
+        </div>
+        <div class="contact-actions">
+          <button class="btn btn-primary copy-discord" type="button">◉ COPY DISCORD NAME</button>
+          <a class="btn btn-outline" href="https://www.instagram.com/spook_1732/" target="_blank" rel="noopener">◎ OPEN INSTAGRAM</a>
+          <a class="btn btn-outline" href="https://www.tiktok.com/@spook2070" target="_blank" rel="noopener">♪ OPEN TIKTOK</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="#home">&lt;<strong>spook</strong> /&gt;</a>
+    <p>“Code is my weapon. Creativity is my power.”</p>
+    <span>Designed & Developed by <strong>spook</strong> 💜</span>
+  </footer>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Nach oben scrollen">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="command-palette" id="commandPalette" aria-hidden="true">
+    <div class="command-backdrop" data-close-command></div>
+    <div class="command-box">
+      <div class="command-search">
+        <span>⌕</span>
+        <input id="commandInput" type="text" placeholder="Gehe zu einem Bereich..." autocomplete="off">
+        <kbd>ESC</kbd>
+      </div>
+      <div class="command-results">
+        <button type="button" data-command-target="home">⌂ <span>Home</span><small>01</small></button>
+        <button type="button" data-command-target="projects">&lt;/&gt; <span>Projects</span><small>02</small></button>
+        <button type="button" data-command-target="plugins">◇ <span>Plugins</span><small>03</small></button>
+        <button type="button" data-command-target="gaming">⌁ <span>Gaming</span><small>04</small></button>
+        <button type="button" data-command-target="skills">⌁ <span>Skills</span><small>05</small></button>
+        <button type="button" data-command-copy>◉ <span>Copy Discord: Spook912</span><small>COPY</small></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <img id="modalIcon" src="assets/logo.svg" alt="">
+      <p id="modalType">PROJECT</p>
+      <h2 id="modalTitle">Project title</h2>
+      <p id="modalDescription">Project description</p>
+      <div class="modal-features" id="modalFeatures"></div>
+      <div class="tag-row" id="modalTags"></div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

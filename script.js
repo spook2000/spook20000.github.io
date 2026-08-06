@@ -38,7 +38,7 @@
   shareButton?.addEventListener("click", async () => {
     const shareData = {
       title: "spook — links & projects",
-      text: "Nexus, Discord und Socials von spook.",
+      text: "Portfolio, Nexus, Discord und Socials von spook.",
       url: window.location.href
     };
 
